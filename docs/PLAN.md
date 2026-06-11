@@ -23,7 +23,7 @@
 
 ---
 
-## 2단계 — Plan (설계)
+## 2단계 — Plan (설계) ✅
 
 > 목표: 리팩토링 후 구조를 확정한다. 코드를 작성하기 전에 반드시 검토한다.
 
@@ -103,9 +103,9 @@ enum Step { CAR_TYPE, ENGINE, BRAKE, STEERING, RUN_TEST }
 
 ### 체크리스트
 
-- [ ] 8개 클래스/enum 구조가 납득된다
-- [ ] `CarValidator.getFailReason()`이 실패 이유를 문자열로 반환하는 설계가 적절하다
-- [ ] `Step` enum으로 단계 흐름을 표현하는 방식이 적절하다
-- [ ] BUG-01 수정 방향 (고장난 엔진 → `CarValidator.isValid()` false + `getFailReason()` 반환)이 맞다
-- [ ] 테스트 8개가 R1~R7 regression을 충분히 커버한다
-- [ ] **[사용자 확인]** Action 단계 진행 승인
+- [x] 8개 클래스/enum 구조가 납득된다
+- [x] `CarValidator.getFailReason()`이 실패 이유를 문자열로 반환하는 설계가 적절하다
+- [x] `Step` enum으로 단계 흐름을 표현하는 방식이 적절하다
+- [x] BUG-01 수정 방향 (고장난 엔진 → `CarValidator.isValid()` false + `getFailReason()` 반환)이 맞다
+- [x] 테스트 8개가 R1~R7 regression을 충분히 커버한다
+- [x] **[사용자 확인]** Action 단계 진행 승인
