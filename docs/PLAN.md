@@ -109,3 +109,49 @@ enum Step { CAR_TYPE, ENGINE, BRAKE, STEERING, RUN_TEST }
 - [x] BUG-01 수정 방향 (고장난 엔진 → `CarValidator.isValid()` false + `getFailReason()` 반환)이 맞다
 - [x] 테스트 8개가 R1~R7 regression을 충분히 커버한다
 - [x] **[사용자 확인]** Action 단계 진행 승인
+
+---
+
+## 3단계 — Action (리팩토링 실행) ✅
+
+> 결과: [docs/ACTION.md](ACTION.md) 참고
+
+### 체크리스트
+
+- [x] Step A — `CarValidatorTest` 8개 테스트 작성 및 통과
+- [x] Step B — enum 5개 추출 (`CarType`, `Engine`, `Brake`, `Steering`, `Step`)
+- [x] Step C — `Car` VO 추출, `static int[] stack` 제거
+- [x] Step D — `CarValidator` 추출, BUG-01 수정
+- [x] Step E — `ConsoleMenu`, `AssemblyWizard` 분리, `Assemble` 정리
+- [x] 전체 유닛 테스트 통과 (`./gradlew test`)
+- [x] 기존 동작과 동일하게 작동하는지 수동 확인
+- [x] `static int[] stack` 전역 상태 완전히 제거 확인
+- [x] BUG-01 수정: 고장난 엔진 선택 시 Test가 FAIL 반환 확인
+- [x] 출력 메시지(한국어)가 리팩토링 전과 동일한지 확인
+- [x] **[사용자 확인]** Commit 단계 진행 승인
+
+---
+
+## 4단계 — Commit (검토 및 마무리) ✅
+
+### 동작 동등성 확인
+
+- [x] Regression 시나리오 8개 직접 실행 결과 일치
+- [x] 뒤로가기(0번 입력) 흐름이 모든 단계에서 정상 동작
+- [x] `exit` 입력 시 정상 종료
+
+### 코드 품질 확인
+
+- [x] 각 클래스가 단일 책임(SRP)을 가진다
+- [x] `CarValidator`가 유일한 유효성 검사 진입점이다
+- [x] 테스트가 public 인터페이스를 검증한다
+- [x] 매직 넘버가 코드에 남아 있지 않다
+
+### 확장성 확인
+
+- [x] 새 차량 타입 추가 시 `CarType` enum + `CarValidator` 규칙 추가만으로 가능한 구조
+
+### 커밋 구성
+
+- [x] 커밋이 논리적 단위로 분리되어 있다
+- [x] **[사용자 확인]** 전체 리팩토링 완료 승인
