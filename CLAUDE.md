@@ -26,7 +26,7 @@
 
 | 문서 | 설명 |
 |------|------|
-| [PLAN.md](PLAN.md) | 리팩토링 전체 계획 — Explore / Plan / Action / Commit 단계별 체크리스트 |
+| [docs/PLAN.md](docs/PLAN.md) | 리팩토링 전체 계획 — Explore / Plan / Action / Commit 단계별 체크리스트 |
 | [docs/EXPLORE.md](docs/EXPLORE.md) | Explore 단계 결과 — Code Smell 7건, 버그 2건, 안전성 문제 3건 상세 분석 |
 
 > 각 단계를 시작하기 전에 해당 문서의 체크리스트를 먼저 확인한다.
